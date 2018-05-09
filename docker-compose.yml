@@ -1,0 +1,15 @@
+version: "3.3"
+services:
+  web:
+    image: chanezon/jpetstoreweb:latest
+    build: .
+    ports:
+     - "80:8080"
+  db:
+    image: chanezon/jpetstoredb:latest
+    build: ./db
+    environment:
+     - MYSQL_ROOT_PASSWORD=foobar
+     - MYSQL_DATABASE=jpetstore
+     - MYSQL_USER=jpetstore
+     - MYSQL_PASSWORD=foobar
